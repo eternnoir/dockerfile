@@ -1,3 +1,6 @@
 [submodule "baseImages/ubuntu-14.04-sshd"]
 	path = baseImages/ubuntu-14.04-sshd
 	url = git@github.com:eternnoir/ubuntu-14.04-sshd.git
+[submodule "service/quassel-core"]
+	path = service/quassel-core
+	url = git@github.com:eternnoir/quassel-core.git
