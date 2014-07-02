@@ -7,3 +7,6 @@
 [submodule "service/transmission"]
 	path = service/transmission
 	url = git@github.com:eternnoir/transmission.git
+[submodule "develop/python"]
+	path = develop/python
+	url = https://github.com/eternnoir/python.git
