@@ -10,3 +10,6 @@
 [submodule "develop/python"]
 	path = develop/python
 	url = https://github.com/eternnoir/python.git
+[submodule "service/RedmineBot"]
+	path = service/RedmineBot
+	url = git@github.com:eternnoir/RedmineBot.git
