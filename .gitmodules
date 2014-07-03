@@ -4,3 +4,6 @@
 [submodule "service/quassel-core"]
 	path = service/quassel-core
 	url = git@github.com:eternnoir/quassel-core.git
+[submodule "service/transmission"]
+	path = service/transmission
+	url = git@github.com:eternnoir/transmission.git
