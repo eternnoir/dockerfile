@@ -7,3 +7,6 @@
 [submodule "service/transmission"]
 	path = service/transmission
 	url = git@github.com:eternnoir/transmission.git
+[submodule "service/activiti-explorer"]
+	path = service/activiti-explorer
+	url = git@github.com:eternnoir/activiti.git
