@@ -12,6 +12,10 @@ RUN add-apt-repository -y ppa:i2p-maintainers/i2p && \
     apt-get update && \
     apt-get install -y i2p
 
+ADD script /root/script
+
+CMD ["sh","/root/script/run.sh","console"]
+
 # WEB GUI
 EXPOSE 7657
 #PROXY
