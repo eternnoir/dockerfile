@@ -1,4 +1,4 @@
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 "---------------------------------------------------------------------------
@@ -26,6 +26,9 @@ set list listchars=tab:»·,trail:·
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+
 " Go-vim setting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -41,43 +44,6 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap gd <Plug>(go-def)
 
 autocmd! bufwritepost .vimrc source ~/.vimrc
-
-
-syntax on       " syntax highlight
-set hlsearch        " search highlighting
-
-if has("gui_running")   " GUI color and font settings
-    if has("gui_gtk2")
-        set guifont=Bitstream\ Vera\ Sans\ Mono\ 13
-    else
-        set guifont=Bitstream_Vera_Sans_Mono:h13
-    endif
-    set t_Co=256          " 256 color mode
-    set cursorline        " highlight current line
-    colors railscasts
-    set background=dark
-else
-    " terminal color settings
-    colors wombat256
-    set background=light
-endif
-
-set clipboard=unnamed   " yank to the system register (*) by default
-set showmatch       " Cursor shows matching ) and }
-set showmode        " Show current mode
-set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
-set wildmenu            " wild char completion menu
-
-" ignore these files while expanding wild chars
-set wildignore=*.o,*.class,*.pyc
-
-set autoindent      " auto indentation
-set incsearch       " incremental search
-set nobackup        " no *~ backup files
-set copyindent      " copy the previous indentation on autoindenting
-set ignorecase      " ignore case when searching
-set smartcase       " ignore case if search pattern is all lowercase,case-sensitive otherwise
-set smarttab        " insert tabs on the start of a line according to context
 
 " disable sound on errors
 set noerrorbells
@@ -114,10 +80,3 @@ function! HasPaste()
 endfunction
 
 "}
-
-au FileType go au BufWritePre <buffer> Fmt
-"au FileType go
-    "\ set ts=2 | " Set tabs to 2 spaces
-    "\ set noexpandtab
-    "\ set shiftwidth=2
-    "\ set softtabstop=2

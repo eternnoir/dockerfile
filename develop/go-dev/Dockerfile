@@ -8,8 +8,7 @@ MAINTAINER Frank Wang <eternnoir@gmail.com>
 #Update
 RUN apt-get update && apt-get install -y software-properties-common
 # Install develop use tool
-RUN apt-get -y install vim git curl mercurial build-essential cmake python-dev
-
+RUN apt-get -y install vim git curl mercurial build-essential cmake python-dev ctags
 ENV HOME /root
 WORKDIR /root
 # Install tpope
