@@ -31,4 +31,8 @@ RUN cp -R /tmp/molokai/colors /root/.vim
 # Install YCM
 RUN git clone https://github.com/Valloric/YouCompleteMe.git /root/.vim/bundle/YouCompleteMe
 RUN cd /root/.vim/bundle/YouCompleteMe; git submodule update --init --recursive; ./install.sh
+
+# Add confit file
 ADD vimrc /root/.vimrc
+ADD tmux.conf /root/.tmux.conf
+
