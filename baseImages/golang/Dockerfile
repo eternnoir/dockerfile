@@ -19,6 +19,6 @@ ENV ARCH amd64
 RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz -q -O - | tar -zxf - -C /usr/local
 ENV GOPATH /go
 ENV GOROOT /usr/local/go
-ENV PATH $PATH:$GOROOT/bin
+ENV PATH $PATH:$GOPATH/bin
 
 VOLUME [ "/go" ]
