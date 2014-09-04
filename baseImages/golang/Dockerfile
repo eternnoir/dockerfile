@@ -13,7 +13,7 @@ WORKDIR /root
 RUN mkdir /go
 # set golang env
 ENV HOME /root
-ENV VERSION 1.3.1
+ENV VERSION 1.2.2
 ENV OS linux
 ENV ARCH amd64
 RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz -q -O - | tar -zxf - -C /usr/local
