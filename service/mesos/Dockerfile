@@ -16,8 +16,6 @@ WORKDIR /tmp
 #RUN dpkg --unpack mesos_${MESOS_VERSION}-${PKG}.ubuntu1404_amd64.deb && apt-get install -f -y 
 #RUN rm mesos_* && apt-get clean
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
-RUN DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
-RUN CODENAME=$(lsb_release -cs)
 RUN echo "deb http://repos.mesosphere.io/ubuntu trusty main" | tee /etc/apt/sources.list.d/mesosphere.list
 RUN apt-get -y update && apt-get -y install mesos
 
