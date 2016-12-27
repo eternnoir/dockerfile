@@ -1,24 +1,15 @@
-#
-# Ubuntu 14.04 with Golang Dockerfile
-#
 # Pull base image.
-FROM ubuntu:14.04
+FROM alpine:latest
 MAINTAINER Frank Wang "eternnoir@gmail.com"
 
-#update
-RUN apt-get -y update
-RUN apt-get -y install wget net-tools
+# Update
 
-WORKDIR /root
-RUN mkdir /go
+RUN apk update && apk --no-cache add ca-certificates openssl && update-ca-certificates 
+
 # set golang env
-ENV HOME /root
-ENV VERSION 1.5
-ENV OS linux
-ENV ARCH amd64
-RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz -q -O - | tar -zxf - -C /usr/local
+RUN mkdir /go
 ENV GOPATH /go
 ENV GOROOT /usr/local/go
-ENV PATH $PATH:$GOPATH/bin:$GOROOT/bin
+RUN wget https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz -q -O - | tar -zxf - -C /usr/local
 
 VOLUME [ "/go" ]
