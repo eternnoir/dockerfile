@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 MAINTAINER Frank Wang "eternnoir@gmail.com"
 
 #update
-RUN apt-get -y update && apt-get -y install wget net-tools && sudo apt-get -y clean
+RUN apt-get -y update && apt-get -y install wget net-tools &&  apt-get -y clean
 
 RUN mkdir /go
 # set golang env
