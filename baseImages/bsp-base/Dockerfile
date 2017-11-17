@@ -63,7 +63,9 @@ RUN apk update \
  && gem install fluentd -v 0.12.40 \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \
- && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+ && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \ 
+ && apk add --no-cache  bash wget curl ca-certificates
+
 
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
